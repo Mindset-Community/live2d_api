@@ -1,0 +1,47 @@
+{
+	"version":"3.0.0",
+	"model":"l2d02.u.moc3",
+    "textures":[
+        "textures/texture_00.png"
+    ],
+    "layout":{
+		"center_x":0.0,
+		"center_y":-0.05,
+		"width":2.0
+	},
+	
+	"motions":{
+		"":[
+            {
+              "File": "motions/Mgirl104_deyi.motion3.json"
+            },
+            {
+              "File": "motions/Mgirl104_naonu.motion3.json"
+            },
+            {
+              "File": "motions/Mgirl104_deyi.motion3.json"
+            },
+            {
+              "File": "motions/Mgirl104_jingkong.motion3.json"
+            },
+            {
+              "File": "motions/Mgirl104_shuaidao.motion3.json"
+            },
+            {
+              "File": "motions/Mgirl104_stand.motion3.json"
+            },
+            {
+              "File": "motions/Mgirl104_shuaidao.motion3.json"
+            },
+            {
+              "File": "motions/Mgirl104_stand.motion3.json"
+            },
+            {
+              "File": "motions/Mgirl104_naonu.motion3.json"
+            },
+            {
+              "File": "motions/Mgirl104_jingkong.motion3.json"
+            }
+          ]
+	}
+}
