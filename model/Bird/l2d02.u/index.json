@@ -13,34 +13,34 @@
 	"motions":{
 		"":[
             {
-              "File": "motions/Mgirl104_deyi.motion3.json"
+              "file": "motions/Mgirl104_deyi.motion3.json"
             },
             {
-              "File": "motions/Mgirl104_naonu.motion3.json"
+              "file": "motions/Mgirl104_naonu.motion3.json"
             },
             {
-              "File": "motions/Mgirl104_deyi.motion3.json"
+              "file": "motions/Mgirl104_deyi.motion3.json"
             },
             {
-              "File": "motions/Mgirl104_jingkong.motion3.json"
+              "file": "motions/Mgirl104_jingkong.motion3.json"
             },
             {
-              "File": "motions/Mgirl104_shuaidao.motion3.json"
+              "file": "motions/Mgirl104_shuaidao.motion3.json"
             },
             {
-              "File": "motions/Mgirl104_stand.motion3.json"
+              "file": "motions/Mgirl104_stand.motion3.json"
             },
             {
-              "File": "motions/Mgirl104_shuaidao.motion3.json"
+              "file": "motions/Mgirl104_shuaidao.motion3.json"
             },
             {
-              "File": "motions/Mgirl104_stand.motion3.json"
+              "file": "motions/Mgirl104_stand.motion3.json"
             },
             {
-              "File": "motions/Mgirl104_naonu.motion3.json"
+              "file": "motions/Mgirl104_naonu.motion3.json"
             },
             {
-              "File": "motions/Mgirl104_jingkong.motion3.json"
+              "file": "motions/Mgirl104_jingkong.motion3.json"
             }
           ]
 	}
