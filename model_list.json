@@ -1,16 +1,14 @@
 {
     "models": [
-        "Bird/l2d02.u",
-        "Potion-Maker/Pio",
-        "Potion-Maker/Tia"
+        "Penchan/penchan"
+        
         
         
         
     ],
     "messages": [
-        "Im a bird!",
-        "来自 Potion Maker 的 Pio 酱 ~",
-        "来自 Potion Maker 的 Tia 酱 ~"
+        "Hello!"
+        
         
     ]
 }
