@@ -1,6 +1,6 @@
 {
     "models": [
-        "Deadbeat/deadbeat",
+        "Bird/l2d02.u",
         "Potion-Maker/Pio",
         "Potion-Maker/Tia"
         
@@ -8,7 +8,7 @@
         
     ],
     "messages": [
-        "dead beat",
+        "Im a bird!",
         "来自 Potion Maker 的 Pio 酱 ~",
         "来自 Potion Maker 的 Tia 酱 ~"
         
