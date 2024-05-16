@@ -2,15 +2,17 @@
     "models": [
         "Custom/Deadbeat",
         "Custom/Penchan",
+        "Custom/Blackcat",
         "Potion-Maker/Pio",
         "Potion-Maker/Tia"
         
     ],
     "messages": [
        
-        "DEADBEAT!",
-        "Penchan!",
-        "来自 Potion Maker 的 Pio 酱 ~",
-        "来自 Potion Maker 的 Tia 酱 ~"
+        "DEADBEAT! Sup!",
+        "Penchan! Aya!",
+        "Blackcat, Sup!",
+        "Sample Mascot Potion Maker Pio ~",
+        "Sample Mascot Potion Maker Tia ~"
     ]
 }

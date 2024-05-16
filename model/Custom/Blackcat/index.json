@@ -1,0 +1,18 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "blackcat.moc3",
+		"Textures": [
+			"blackcat.1024/texture_00.png"
+		],
+		"Physics": "blackcat.physics3.json",
+		"DisplayInfo": "blackcat.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}
