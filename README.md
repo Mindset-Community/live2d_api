@@ -1,3 +1,10 @@
+# 修改部分
+添加了docker compose，启动如下。目前只在本地localhost测试过，过段时间上服务器测试。启动前需要检查一下你的nginx.conf文件
+```bash
+docker compose up -d
+```
+
+# 原始部分
 # Live2D API
 
 Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 上使用的后端 API

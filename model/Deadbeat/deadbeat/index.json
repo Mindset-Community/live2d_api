@@ -1,0 +1,12 @@
+{
+    "Version": 3,
+    "FileReferences": {
+      "Moc": "deadbeat.moc3",
+      "Textures": [
+        "deadbeat.2048/texture_00.png"
+      ],
+      "Physics": "deadbeat.physics3.json"
+      
+    }
+   
+  }

@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  php:
+    image: php:8-fpm
+    volumes:
+      - ./:/var/www/html
+  nginx:
+    image: nginx:latest
+    restart: always
+    ports:
+        - 80:80
+    volumes:
+        - ./nginx.conf:/etc/nginx/nginx.conf
+        - ./:/usr/share/nginx/html
+  
