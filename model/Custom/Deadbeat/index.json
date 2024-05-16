@@ -1,12 +1,54 @@
 {
-    "Version": 3,
-    "FileReferences": {
-      "Moc": "deadbeat.moc3",
-      "Textures": [
-        "deadbeat.2048/texture_00.png"
-      ],
-      "Physics": "deadbeat.physics3.json"
-      
-    }
-   
-  }
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "deadbeat.moc3",
+		"Textures": [
+			"deadbeat.2048/texture_00.png"
+		],
+		"Physics": "deadbeat.physics3.json",
+		"DisplayInfo": "deadbeat.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "blush",
+				"File": "blush.exp3.json"
+			},
+			{
+				"Name": "angry",
+				"File": "angry.exp3.json"
+			},
+			{
+				"Name": "sad",
+				"File": "sad.exp3.json"
+			},
+			{
+				"Name": "sparkle",
+				"File": "sparkle.exp3.json"
+			},
+			{
+				"Name": "hearteyes",
+				"File": "hearteyes.exp3.json"
+			},
+			{
+				"Name": "nervous",
+				"File": "nervous.exp3.json"
+			},
+			{
+				"Name": "lightsticks",
+				"File": "lightsticks.exp3.json"
+			}
+		]
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	],
+	"HitAreas": []
+}
