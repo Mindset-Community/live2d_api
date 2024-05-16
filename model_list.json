@@ -1,7 +1,7 @@
 {
     "models": [
-        "Deadbeat/deadbeat",
-        "Penchan/penchan",
+        "Custom/Deadbeat",
+        "Custom/Penchan",
         "Potion-Maker/Pio",
         "Potion-Maker/Tia"
         
