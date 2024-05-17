@@ -1,58 +1,62 @@
-# 修改部分
-添加了docker compose，启动如下。目前只在本地localhost测试过，过段时间上服务器测试。启动前需要检查一下你的nginx.conf文件
+# Modified Section
+
+Added Docker Compose; start it as follows. It has only been tested locally on localhost so far. Will test it on a server later. Before starting, check your nginx.conf file.
+
 ```bash
 docker compose up -d
 ```
 
-# 原始部分
+# Original Section
+
 # Live2D API
 
-Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 上使用的后端 API
+Backend API used for the Live2D mascot plugin (https://www.fghrsh.net/post/123.html).
 
-### 特性
+### Features
 
-- 原生 PHP 开发，无需伪静态，开箱即用
-- 支持 模型、皮肤 的 顺序切换 和 随机切换
-- 支持 单模型 单皮肤 切换、多组皮肤 递归穷举
-- 支持 同分组 多个模型 或 多个路径 的 加载切换
+- Developed in native PHP, no need for pseudo-static, ready to use out of the box
+- Supports sequential and random switching of models and skins
+- Supports single model single skin switching, multi-group skin exhaustive combination
+- Supports loading and switching multiple models or multiple paths within the same group
 
-## 使用
+## Usage
 
-### 环境要求
-- PHP 版本 >= 5.2
-- 依赖 PHP 扩展：json
+### Requirements
 
-### 目录结构
+- PHP version >= 5.2
+- Required PHP extension: json
+
+### Directory Structure
 
 ```shell
-│  model_list.json              // 模型列表
+│  model_list.json              // List of models
 │
-├─model                         // 模型路径
-│  └─GroupName                  // 模组分组
-│      └─ModelName              // 模型名称
+├─model                         // Model path
+│  └─GroupName                  // Model group
+│      └─ModelName              // Model name
 │
-├─add                           // 更新皮肤列表
-├─get                           // 获取模型配置
-├─rand                          // 随机切换模型
-├─rand_textures                 // 随机切换皮肤
-├─switch                        // 顺序切换模型
-├─switch_textures               // 顺序切换皮肤
+├─add                           // Update skin list
+├─get                           // Get model configuration
+├─rand                          // Randomly switch model
+├─rand_textures                 // Randomly switch skin
+├─switch                        // Sequentially switch model
+├─switch_textures               // Sequentially switch skin
 └─tools
-        modelList.php           // 列出模型列表
-        modelTextures.php       // 列出皮肤列表
-        name-to-lower.php       // 文件名格式化
+        modelList.php           // List of models
+        modelTextures.php       // List of skins
+        name-to-lower.php       // Filename formatting
 ```
 
-### 添加模型
+### Adding a Model
 
-- 单模型 单皮肤 切换
-    - 单次加载只输出一个皮肤
-    - 皮肤放在 `textures` 文件夹，自动识别
+- Single model, single skin switching
+  - Loads only one skin at a time
+  - Place skins in the `textures` folder, automatically recognized
 
 ```shell
 │  index.json
 │  model.moc
-│  textures.cache       // 皮肤列表缓存，自动生成
+│  textures.cache       // Skin list cache, auto-generated
 │
 ├─motions
 │      idle_01.mtn
@@ -65,10 +69,11 @@ Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 上使用的后端
         winter-costume.png
 ```
 
-- 单模型 多组皮肤 递归穷举
-    - 多组皮肤 组合模型、穷举组合
-    - 皮肤文件夹按 `texture_XX` 命名
-    - 添加 `textures_order.json` 列出组合
+- Single model, multiple skin combinations
+  - Combines multiple groups of skins, exhaustive combinations
+  - Name skin folders as `texture_XX`
+  - Add `textures_order.json` to list combinations
+
 ```shell
 │  index.json
 │  model.moc
@@ -101,28 +106,54 @@ Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 上使用的后端
 textures_order.json
 
 ```json
-[
-    ["texture_00"],
-    ["texture_01","texture_02"],
-    ["texture_03"]
-]
+[["texture_00"], ["texture_01", "texture_02"], ["texture_03"]]
 ```
 
 textures.cache
 
 ```json
 [
-    ["texture_00/00.png","texture_01/00.png","texture_02/00.png","texture_03/00.png"],
-    ["texture_00/00.png","texture_01/00.png","texture_02/00.png","texture_03/01.png"],
-    ["texture_00/00.png","texture_01/01.png","texture_02/01.png","texture_03/00.png"],
-    ["texture_00/00.png","texture_01/01.png","texture_02/01.png","texture_03/01.png"],
-    ["texture_00/00.png","texture_01/02.png","texture_02/02.png","texture_03/00.png"],
-    ["texture_00/00.png","texture_01/02.png","texture_02/02.png","texture_03/01.png"]
+  [
+    "texture_00/00.png",
+    "texture_01/00.png",
+    "texture_02/00.png",
+    "texture_03/00.png"
+  ],
+  [
+    "texture_00/00.png",
+    "texture_01/00.png",
+    "texture_02/00.png",
+    "texture_03/01.png"
+  ],
+  [
+    "texture_00/00.png",
+    "texture_01/01.png",
+    "texture_02/01.png",
+    "texture_03/00.png"
+  ],
+  [
+    "texture_00/00.png",
+    "texture_01/01.png",
+    "texture_02/01.png",
+    "texture_03/01.png"
+  ],
+  [
+    "texture_00/00.png",
+    "texture_01/02.png",
+    "texture_02/02.png",
+    "texture_03/00.png"
+  ],
+  [
+    "texture_00/00.png",
+    "texture_01/02.png",
+    "texture_02/02.png",
+    "texture_03/01.png"
+  ]
 ]
 ```
 
-- 同分组 多个模型 或 多个路径 切换
-    - 修改 `model_list.json` 添加多个模型
+- Multiple models or paths within the same group switching
+  - Modify `model_list.json` to add multiple models
 
 ```shell
 │
@@ -149,35 +180,30 @@ textures.cache
 ```
 
 model_list.json
+
 ```json
 {
-    "models": [
-        "GroupName/ModelName",
-        [
-            "Group1/Model1",
-            "Group1/Model2",
-            "Group2/Model1"
-        ]
-    ],
-    "messages": [
-        "Example 1",
-        "Example 2"
-    ]
+  "models": [
+    "GroupName/ModelName",
+    ["Group1/Model1", "Group1/Model2", "Group2/Model1"]
+  ],
+  "messages": ["Example 1", "Example 2"]
 }
 ```
 
-### 接口用法
-- `/add/` - 检测 新增皮肤 并更新 缓存列表
-- `/get/?id=1-23` 获取 分组 1 的 第 23 号 皮肤
-- `/rand/?id=1` 根据 上一分组 随机切换
-- `/switch/?id=1` 根据 上一分组 顺序切换
-- `/rand_textures/?id=1-23` 根据 上一皮肤 随机切换 同分组其他皮肤
-- `/switch_textures/?id=1-23` 根据 上一皮肤 顺序切换 同分组其他皮肤
+### API Usage
 
-## 版权声明
+- `/add/` - Detects new skins and updates cache list
+- `/get/?id=1-23` - Gets the 23rd skin in group 1
+- `/rand/?id=1` - Randomly switches based on the previous group
+- `/switch/?id=1` - Sequentially switches based on the previous group
+- `/rand_textures/?id=1-23` - Randomly switches other skins in the same group based on the previous skin
+- `/switch_textures/?id=1-23` - Sequentially switches other skins in the same group based on the previous skin
 
-> (>▽<) 都看到这了，点个 Star 吧 ~
+## Copyright Notice
 
-**API 内所有模型 版权均属于原作者，仅供研究学习，不得用于商业用途**  
+> (>▽<) You've read this far, give it a Star ~
+
+**All models within the API are copyrighted by their original authors, for research and learning only, not for commercial use**
 
 MIT © FGHRSH
